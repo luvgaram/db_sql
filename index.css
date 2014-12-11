@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, header, footer,blockquote,table,th,td,nav {margin:0; padding:0; font-family: "Roboto",Arial,sans-serif;}
+
+#wrap {
+    background-color: #F2EB69;
+    height: 100%;
+    padding: 20px 0px 0px 20px;
+}
+
+h1>img {
+    width: 120px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.title>div{
+    float: left;
+    margin: 0px 20px 10px 0px;
+}
+
+.inputTitle {
+    width: 514px;
+}
+
+.inputAuthor {
+    width: 120px;
+}
+
+.contents {
+    clear: both;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 800px;
+    height: 400px;
+    border: 1px solid #ccc;
+}
+
+.inputButton, .resetButton {
+    width: 300px;
+    margin-top: 10px;
+}
+
+.inputButton {
+    margin-right: 200px;
+}
+
+.resetButton {
+    color: pink;
+}
