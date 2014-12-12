@@ -112,12 +112,23 @@ article {
     border: 1px solid #4e5259;
 }
 
+.reply {
+    
+    background-color: #4E5259;
+    padding: 6px;
+}
+
 .inputReply {
-    width: 40px;
+    width: 38px;
     float: left;
 }
 
 .inputLink {
     float: right;
     margin-bottom: 10px;
+}
+
+.back {
+    float: right;
+    padding-bottom: 10px;
 }

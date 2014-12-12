@@ -30,6 +30,7 @@
 	author = request.getParameter("author");
 	detail = request.getParameter("detail");
 	out.println("<h3>" + author + "님의 댓글이 " + aid + "번 기사에 입력됐습니다.</h3>");
+	out.println("<p class = 'back'><a href='detail.jsp?aid=" + aid + "'>돌아가기</a></p>");
 	sql="select * from replies where aid=" + aid + " order by write_date desc";
 %>
 
@@ -67,10 +68,6 @@
 		out.println("<p>500 ERROR</p>");
 		out.println(e.getMessage());
 	}
-%>
-
-<%
-	out.println("<form method = post action = 'inputReply.jsp?aid=" + aid + "'>");
 %>
 
 </div>

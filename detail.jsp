@@ -22,15 +22,14 @@
 <body>
 <div id = "wrap">
 <h1><img src="logo.png"></h1>
-
+<p class="back"><a href="articles.jsp">돌아가기</a></p>
 <%	
 	sql="select * from articles where aid=" + request.getParameter("aid");
 	request.setCharacterEncoding("UTF-8");
 	aid = Integer.parseInt(request.getParameter("aid"));
-//	out.println("<h1>sql: " + sql + "</h1>");
 %>
 
-<!-- read from mysql -->
+<!-- read from mysql - articles-->
 <%
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -55,20 +54,44 @@
 		out.println("<p>500 ERROR</p>");
 		out.println(e.getMessage());
 	}
-%>
-
-<%
 	out.println("<form method = post action = 'inputReply.jsp?aid=" + aid + "'>");
 %>
+<div class="reply">
 
-<div class = "title">
-	<div>이름: <input type = "text" class = "inputAuthor" name = "author" /></div>
-	<div>댓글: <input type = "text" class = "inputTitle" name = "detail" /></div>
-	<div><input type = "submit" class = "inputReply" value = "저장"></div>
+<div class="title">
+	<div>이름: <input type="text" class="inputAuthor" name="author" /></div>
+	<div>댓글: <input type="text" class="inputTitle" name="detail" /></div>
+	<div><input type="submit" class="inputReply" value="저장"></div>
 </div>
 </form>
 
+<!-- read from mysql - replies -->
+<%
+	try {
+		sql = "select * from replies where aid=" + aid + " order by write_date desc";
+		//select
+		rs = stmt.executeQuery(sql);
+		out.println("<table>");	
+//		out.println("<tr><th>이름</th><th>시간</th><th>댓글내용</th>");
+		while(rs.next()) {
+			author = rs.getString("author");
+			detail = rs.getString("detail");
+			write_date = rs.getString("write_date");
+			out.println("<tr>");
+			out.println("<td>" + author + "</td><td>" + write_date + "</td><td>" + detail + "</td>");			
+			out.println("<tr>");
+		}
+		
+		out.println("</table>");
+	
+	} catch (Exception e) {
+		ok = false;
+		out.println("<p>500 ERROR</p>");
+		out.println(e.getMessage());
+	}
+%>
 
+</div>
 </div>
 </body>
 </html>
