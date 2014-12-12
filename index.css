@@ -8,6 +8,19 @@ body {
     padding: 20px 0px 0px 20px;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #000;
+}
+
 #wrap {
     width: 800px;
     margin: 0 auto;
@@ -22,11 +35,13 @@ h3 {
 }
 
 table {
+    clear: both;
     background-color: #f4f4f4;
     border: 1px solid #4e5259;
 }
 
 th, tr, td {
+    padding: 4px 0px;
     border: 1px solid #9e9ba3;
 }
 
@@ -35,7 +50,7 @@ tr, td {
 }
 
 td:nth-child(3) {
-    width: 400px;
+    width: 532px;
 }
 
 form {
@@ -100,4 +115,9 @@ article {
 .inputReply {
     width: 40px;
     float: left;
+}
+
+.inputLink {
+    float: right;
+    margin-bottom: 10px;
 }
