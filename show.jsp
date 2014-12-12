@@ -30,7 +30,7 @@
 	author = request.getParameter("author");
 	title = request.getParameter("title");
 	detail = request.getParameter("detail");
-	out.println("<h1>message from post: " + author + ", " + title + ", " + "</h1>");
+	out.println("<h3>" + author + " 기자의 '" + title + "' 기사가 입력됐습니다.</h3>");
 %>
 
 <!-- read from mysql -->
@@ -49,7 +49,7 @@
 		
 		//select
 		rs = stmt.executeQuery(sql);
-		out.println("<table border = '1'");
+		out.println("<table>");
 		out.println("<tr><th>번호</th><th>기자이름</th><th>기사제목</th><th>시간</th>");
 		while(rs.next()) {
 			aid = rs.getInt("aid");
@@ -57,7 +57,7 @@
 			title = rs.getString("title");
 			write_date = rs.getString("write_date");
 			out.println("<tr>");
-			out.println("<td>" + aid + "</td><td>" + author + "</td><td>" + title + "</td><td>" + write_date + "</td>");
+			out.println("<td>" + aid + "</td><td>" + author + "</td><td><a href='detail.jsp?aid=" + aid + "'>" + title + "</a></td><td>" + write_date + "</td>");			
 			out.println("<tr>");
 		}
 		

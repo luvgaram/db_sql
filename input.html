@@ -1,15 +1,30 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0" />
+        <title>Let's study DB Basic</title>
+        <link rel="stylesheet" href="index.css">
+
 </head>
+
 <body>
-	<h1>Input Form</h1>
-	<form action="show.jsp" method="post">
-		<div>기자이름: <input type="text" name="author"> </div>
-		<div>기사제목: <input type="text" name="title"> </div>
-		<div>기사내용: <input type="text" name="detail"> </div>
-		<div><input type="submit"><input type="reset"></div>
-	</form>
+	<div id = "wrap">
+		<h1><img src="logo.png"></h1>
+
+		<form method=post action="show.jsp">
+			<div class = "title">
+				<div>기자이름: <input type="text" class="inputAuthor" name="author" /></div>
+				<div>기사제목: <input type="text" class="inputTitle" name="title" /></div>
+			</div>
+			<div class = "contents">
+				<p>기사내용:</p>
+				<textarea name="detail"></textarea></div>
+				<div><input type="submit" class="inputButton" value="기사 저장">
+				<input type="reset" class="resetButton" value="지우기"></div>
+			</div>
+		</form>
+	</div>
 </body>
+
 </html>
