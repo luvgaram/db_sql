@@ -57,6 +57,18 @@
 	}
 %>
 
+<%
+	out.println("<form method = post action = 'inputReply.jsp?aid=" + aid + "'>");
+%>
+
+<div class = "title">
+	<div>이름: <input type = "text" class = "inputAuthor" name = "author" /></div>
+	<div>댓글: <input type = "text" class = "inputTitle" name = "detail" /></div>
+	<div><input type = "submit" class = "inputReply" value = "저장"></div>
+</div>
+</form>
+
+
 </div>
 </body>
 </html>
