@@ -37,7 +37,7 @@
 				 	stmt = conn.createStatement();
 				 	rs = stmt.executeQuery(sql);
 				 	
-				 	out.println("<h3>" + rs + "</h3>");
+				 	out.println("<h3>" + rs.next() + "</h3>");
 				} catch (Exception e) {
 				 	ok = false;
 				 	out.println("<p>500 ERROR</p>");
