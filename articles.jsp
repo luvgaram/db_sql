@@ -27,7 +27,7 @@ pageEncoding="UTF-8" %>
 <body>
 <div id = "wrap">
 <h1><img src="logo.png"></h1>
-<p class = "inputLink"><a href="input.html">기사 쓰기</a></p>
+<p class = "inputLink"><a href="login.html">기자 로그인</a></p>
 <!-- read from mysql -->
 <%
         try {

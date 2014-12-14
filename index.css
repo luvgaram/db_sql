@@ -4,13 +4,13 @@
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, header, footer,blockquote,table,th,td,nav,form, input {margin:0; padding:0; font-family: "Roboto", "Nanum Gothic", Arial,sans-serif;}
 
 body {
-    background-color: #345391;
-    padding: 20px 0px 0px 20px;
+	background-color: #345391;
+	padding: 20px 0px 0px 20px;
 }
 
 a {
-    color: #000;
-    text-decoration: none;
+	color: #000;
+	text-decoration: none;
 }
 
 a:hover {
@@ -18,117 +18,116 @@ a:hover {
 }
 
 a:visited {
-    color: #000;
+	color: #000;
 }
 
 #wrap {
-    width: 800px;
-    margin: 0 auto;
+	width: 800px;
+	margin: 0 auto;
 }
 
 h1>img {
-    width: 200px;
+	width: 200px;
 }
 
 h3 {
-    margin: 20px 0px;
+	margin: 20px 0px;
 }
 
 table {
-    clear: both;
-    background-color: #f4f4f4;
-    border: 1px solid #4e5259;
+	clear: both;
+	background-color: #f4f4f4;
+	border: 1px solid #4e5259;
 }
 
 th, tr, td {
-    padding: 4px 0px;
-    border: 1px solid #9e9ba3;
+	padding: 4px 0px;
+	border: 1px solid #9e9ba3;
 }
 
 tr, td {
-   font-size: 0.95em;
+	font-size: 0.95em;
 }
 
 td:nth-child(3) {
-    width: 532px;
+	width: 532px;
 }
 
 form {
-    margin-top: 20px;
-    font-size: 11px;
+	margin-top: 20px;
+	font-size: 11px;
 }
 
 .title, .contents {
-    color: #f4f4f4;
+	color: #f4f4f4;
 }
 
 .title>div {
-    float: left;
-    margin: 0px 10px 10px 0px;
+	float: left;
+	margin: 0px 10px 10px 0px;
 }
 
 .contents p {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .inputTitle {
-    width: 544px;
+	width: 544px;
 }
 
 .inputAuthor {
-    width: 120px;
+	width: 120px;
 }
 
 .contents {
-    clear: both;
-    margin-top: 10px;
+	clear: both;
+	margin-top: 10px;
 }
 
 textarea {
-    width: 800px;
-    height: 400px;
-    border: 1px solid #d3d6db;
+	width: 800px;
+	height: 400px;
+	border: 1px solid #d3d6db;
 }
 
 .inputButton, .resetButton {
-    width: 300px;
-    margin-top: 10px;
-    padding: 4px;
+	width: 300px;
+	margin-top: 10px;
+	padding: 4px;
 }
 
 .inputButton {
-    margin-right: 190px;
+	margin-right: 190px;
 }
 
 .resetButton {
-    color: #c55391;
+	color: #c55391;
 
 }
 
 article {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f4f4f4;
-    border: 1px solid #4e5259;
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #f4f4f4;
+	border: 1px solid #4e5259;
 }
 
 .reply {
-    
-    background-color: #4E5259;
-    padding: 6px;
+	background-color: #4E5259;
+	padding: 6px;
 }
 
 .inputReply {
-    width: 38px;
-    float: left;
+	width: 38px;
+	float: left;
 }
 
 .inputLink {
-    float: right;
-    margin-bottom: 10px;
+	float: right;
+	margin-bottom: 10px;
 }
 
 .back {
-    float: right;
-    padding-bottom: 10px;
+	float: right;
+	padding-bottom: 10px;
 }
