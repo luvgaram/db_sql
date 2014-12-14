@@ -36,7 +36,7 @@
 				 	stmt = conn.createStatement();
 				 	rs = stmt.executeQuery(sql);
 				 	
-				 	if (rs.next() == "1") {
+				 	if (rs.next() == "true") {
 				   		sql = "select name from members where id = '" + id + "');";
 				   		rs = stmt.executeQuery(sql);
 				   		name = rs.next();
