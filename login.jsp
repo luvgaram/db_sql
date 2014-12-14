@@ -29,7 +29,8 @@
 				request.setCharacterEncoding("UTF-8");
 				mid = request.getParameter("mid");
 				password = request.getParameter("password");
-				sql = "select count(*) as result from members where mid =" + mid + " and password=password('" + password + "');";
+				sql = "select count(*) as result from members where mid ='" + mid + "' and password=password('" + password + "');";
+				out.println("<h3>" + sql + "</h3>");
 				try {
 			 		Class.forName("com.mysql.jdbc.Driver");
 				 	conn = DriverManager.getConnection(host, user, pw);
