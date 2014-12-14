@@ -4,8 +4,7 @@
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 		<%@page import="java.sql.*" %>
 		<%!
-				String id;
-				String password;
+				String id, password, name;
 				String host="jdbc:mysql://localhost/popidb";
 				String user="popi";
 				String pw="db1004";
@@ -37,7 +36,20 @@
 				 	stmt = conn.createStatement();
 				 	rs = stmt.executeQuery(sql);
 				 	
-				 	out.println("<h3>" + rs.next() + "</h3>");
+				 	if (rs.next() == "1") {
+				   		sql = "select name from members where id = '" + id + "');";
+				   		rs = stmt.executeQuery(sql);
+				   		name = rs.next();
+				   		
+				   		out.println("<form method=post action='show.jsp'>");
+				   		out.println("<div class = 'title'><div>기자이름: " + name);
+				   		out.println("<div>기사제목: <input type='text' class='inputTitle' name='title' /></div></div>");
+				   		out.println("<div class = 'contents'><p>기사내용:</p><textarea name='detail'></textarea>");
+				   		out.println("<div><input type='submit' class='inputButton' value='기사 저장'><input type='reset' class='resetButton' value='지우기'></div></div></form>");
+		   		
+			   		} else {
+			   			out.println("<p>기자ID나 비밀번호가 일치하지 않습니다.</p>");
+			   		}
 				} catch (Exception e) {
 				 	ok = false;
 				 	out.println("<p>500 ERROR</p>");
