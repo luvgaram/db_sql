@@ -4,8 +4,8 @@
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 		<%@page import="java.sql.*" %>
 		<%!
-				int aid;
-				String author, title, detail, write_date;
+				int mid;
+				String password;
 				String host="jdbc:mysql://localhost/popidb";
 				String user="popi";
 				String pw="db1004";
