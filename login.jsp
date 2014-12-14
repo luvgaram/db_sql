@@ -36,16 +36,17 @@
 				 	stmt = conn.createStatement();
 				 	rs = stmt.executeQuery(sql);
 				 	
-				 	if (rs.next()) {
+				 	if (rs.next() == true) {
 				   		sql = "select name from members where id = '" + id + "');";
 				   		rs = stmt.executeQuery(sql);
-				   		name = rs.next();
+				   		out.println(rs.next());
+				   		//name = rs.next();
 				   		
-				   		out.println("<form method=post action='show.jsp'>");
-				   		out.println("<div class = 'title'><div>기자이름: " + name);
-				   		out.println("<div>기사제목: <input type='text' class='inputTitle' name='title' /></div></div>");
-				   		out.println("<div class = 'contents'><p>기사내용:</p><textarea name='detail'></textarea>");
-				   		out.println("<div><input type='submit' class='inputButton' value='기사 저장'><input type='reset' class='resetButton' value='지우기'></div></div></form>");
+				   		//out.println("<form method=post action='show.jsp'>");
+				   		//out.println("<div class = 'title'><div>기자이름: " + name);
+				   		//out.println("<div>기사제목: <input type='text' class='inputTitle' name='title' /></div></div>");
+				   		//out.println("<div class = 'contents'><p>기사내용:</p><textarea name='detail'></textarea>");
+				   		//out.println("<div><input type='submit' class='inputButton' value='기사 저장'><input type='reset' class='resetButton' value='지우기'></div></div></form>");
 		   		
 			   		} else {
 			   			out.println("<p>기자ID나 비밀번호가 일치하지 않습니다.</p>");
