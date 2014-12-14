@@ -27,7 +27,7 @@
 			<!-- request handle -->
 			<%
 				request.setCharacterEncoding("UTF-8");
-				mid = request.getParameter("id");
+				id = request.getParameter("id");
 				password = request.getParameter("password");
 				sql = "select count(*) as result from members where id ='" + id + "' and password=password('" + password + "');";
 				
