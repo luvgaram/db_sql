@@ -4,7 +4,7 @@
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 		<%@page import="java.sql.*" %>
 		<%!
-				int mid;
+				string mid;
 				String password;
 				String host="jdbc:mysql://localhost/popidb";
 				String user="popi";
@@ -29,7 +29,7 @@
 				 request.setCharacterEncoding("UTF-8");
 				 mid = request.getParameter("mid");
 				 password = request.getParameter("password");
-				 select = "select count(*) as result from users where mid =" + mid + " and password=password('" + password + "');"
+				 select = "select count(*) as result from users where mid =" + mid + " and password=password('" + password + "');";
 				 rs = stmt.executeQuery(sql);
 
 				 out.println("<h3>" + rs + "</h3>");
