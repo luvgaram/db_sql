@@ -4,6 +4,7 @@
 		<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 		<%@page import="java.sql.*" %>
 		<%!
+				int mid;
 				String id, password, name;
 				String host="jdbc:mysql://localhost/popidb";
 				String user="popi";
@@ -35,14 +36,15 @@
 				 	conn = DriverManager.getConnection(host, user, pw);
 				 	stmt = conn.createStatement();
 				 	rs = stmt.executeQuery(sql);
-				 	
-				 	if (rs.next() == true) {
-				   		sql = "select name from members where id = '" + id + "';";
+				 	rs.next();
+				 	if (rs.getString("result").equals("1")) {
+				   		sql = "select * from members where id = '" + id + "';";
 				   		rs = stmt.executeQuery(sql);
-				   		out.println(rs.next());
-				   		name = rs.next();
-				   		
-				   		out.println("<form method=post action='show.jsp'>");
+						rs.next();
+				   		name = rs.getString("name");
+				   		mid = rs.getInt("mid");
+
+				   		out.println("<form method=post action='show.jsp?mid=" + mid + "'>");
 				   		out.println("<div class = 'title'><div>기자이름: " + name);
 				   		out.println("<div>기사제목: <input type='text' class='inputTitle' name='title' /></div></div>");
 				   		out.println("<div class = 'contents'><p>기사내용:</p><textarea name='detail'></textarea>");
