@@ -12,7 +12,7 @@
 				Connection conn;
 				Statement stmt;
 				PreparedStatement pstmt;
-				String sql="select * from users";
+				String sql;
 				String select;
 				ResultSet rs;
 				boolean ok = true;
@@ -29,7 +29,7 @@
 				 request.setCharacterEncoding("UTF-8");
 				 mid = request.getParameter("mid");
 				 password = request.getParameter("password");
-				 select = "select count(*) as result from users where mid =" + mid + " and password=password('" + password + "');";
+				 sql = "select count(*) as result from members where mid =" + mid + " and password=password('" + password + "');";
 				 rs = stmt.executeQuery(sql);
 
 				 out.println("<h3>" + rs + "</h3>");
