@@ -4,7 +4,7 @@
         <%@page import="java.sql.*" %>
         <%!
                 int aid;
-                String author, title, detail, write_date;
+                String name, title, detail, write_date;
                 String host="jdbc:mysql://localhost/popidb";
                 String user="popi";
                 String pw="db1004";
@@ -22,11 +22,11 @@
 <body>
 <div id = "wrap">
 <h1><img src="logo.png"></h1>
-<p class="back"><a href="articles.jsp">돌아가기</a></p>
+<p class="back"><a href="articles.jsp?sid=0">돌아가기</a></p>
 <%	
-	sql="select * from articles where aid=" + request.getParameter("aid");
-	request.setCharacterEncoding("UTF-8");
 	aid = Integer.parseInt(request.getParameter("aid"));
+	sql="select aid, sid, members.name, title, detail, write_date from articles INNER JOIN members ON articles.mid = members.mid where aid=" + aid;
+	request.setCharacterEncoding("UTF-8");
 %>
 
 <!-- read from mysql - articles-->
@@ -39,13 +39,13 @@
 		//select
 		rs = stmt.executeQuery(sql);
 		while(rs.next()) {
-			author = rs.getString("author");
+			name = rs.getString("name");
 			title = rs.getString("title");
 			write_date = rs.getString("write_date");
 			detail = rs.getString("detail");
 			out.println("<article>");
 			out.println("<h3> 제목: " + title + "</h3>");
-			out.println("<p>기사번호: " + aid + ", 기자이름: " + author + ", 작성일: " + write_date + "</p>");
+			out.println("<p>기사번호: " + aid + ", 기자이름: " + name + ", 작성일: " + write_date + "</p>");
 			out.println("<p>" + detail + "</p></article>");
 		}
 		
@@ -69,16 +69,14 @@
 <%
 	try {
 		sql = "select * from replies where aid=" + aid + " order by write_date desc";
-		//select
 		rs = stmt.executeQuery(sql);
 		out.println("<table>");	
-//		out.println("<tr><th>이름</th><th>시간</th><th>댓글내용</th>");
 		while(rs.next()) {
-			author = rs.getString("author");
+			name = rs.getString("author");
 			detail = rs.getString("detail");
 			write_date = rs.getString("write_date");
 			out.println("<tr>");
-			out.println("<td>" + author + "</td><td>" + write_date + "</td><td>" + detail + "</td>");			
+			out.println("<td>" + name + "</td><td>" + write_date + "</td><td>" + detail + "</td>");			
 			out.println("<tr>");
 		}
 		

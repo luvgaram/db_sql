@@ -4,16 +4,16 @@
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 	<%@page import="java.sql.*" %>
 	<%!
-		int aid;
-		String author, title, detail, write_date;
+		int aid, sid, mid;
+		String name, title, detail, write_date;
 		String host="jdbc:mysql://localhost/popidb";
 		String user="popi";
 		String pw="db1004";
 		Connection conn;
 		Statement stmt;
 		PreparedStatement pstmt;
-		String sql="select * from articles order by write_date desc";
-		String insert="insert into articles(author, title, detail) values(?, ?, ?)";
+		String sql="SELECT aid, sid, members.name, title, detail, write_date FROM articles INNER JOIN members ON articles.mid = members.mid;";
+		String insert="insert into articles(sid, mid, title, detail) values(?, ?, ?, ?)";
 		ResultSet rs;
 		boolean ok = true;
 	%>
@@ -27,10 +27,11 @@
 <!-- request handle -->
 <%
 	request.setCharacterEncoding("UTF-8");
-	author = request.getParameter("author");
+	sid = Integer.parseInt(request.getParameter("sid"));
+	mid = Integer.parseInt(request.getParameter("mid"));
 	title = request.getParameter("title");
 	detail = request.getParameter("detail");
-	out.println("<h3>" + author + " 기자의 '" + title + "' 기사가 입력됐습니다.</h3>");
+	out.println("<h3>" + title + "' 기사가 입력됐습니다.</h3>");
 %>
 
 <!-- read from mysql -->
@@ -42,9 +43,10 @@
 
 		//insert
 		pstmt = conn.prepareStatement(insert);
-		pstmt.setString(1, author);
-		pstmt.setString(2, title);
-		pstmt.setString(3, detail);
+		pstmt.setInt(1, sid);
+		pstmt.setInt(2, mid);
+		pstmt.setString(3, title);
+		pstmt.setString(4, detail);
 		pstmt.execute();
 		
 		//select
@@ -53,11 +55,11 @@
 		out.println("<tr><th>번호</th><th>기자이름</th><th>기사제목</th><th>시간</th>");
 		while(rs.next()) {
 			aid = rs.getInt("aid");
-			author = rs.getString("author");
+			name = rs.getString("name");
 			title = rs.getString("title");
 			write_date = rs.getString("write_date");
 			out.println("<tr>");
-			out.println("<td>" + aid + "</td><td>" + author + "</td><td><a href='detail.jsp?aid=" + aid + "'>" + title + "</a></td><td>" + write_date + "</td>");			
+			out.println("<td>" + aid + "</td><td>" + name + "</td><td><a href='detail.jsp?aid=" + aid + "'>" + title + "</a></td><td>" + write_date + "</td>");			
 			out.println("<tr>");
 		}
 		

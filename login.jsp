@@ -45,9 +45,10 @@
 				   		mid = rs.getInt("mid");
 
 				   		out.println("<form method=post action='show.jsp?mid=" + mid + "'>");
-				   		out.println("<div class = 'title'><div>기자이름: " + name);
+				   		out.println("<div class='title'><div>기자이름: " + name);
 				   		out.println("<div>기사제목: <input type='text' class='inputTitle' name='title' /></div></div>");
-				   		out.println("<div class = 'contents'><p>기사내용:</p><textarea name='detail'></textarea>");
+				   		out.println("<div class='author'>분류: <select name='sid'><option value='1'>정치</option><option value='2'>사회</option><option value='3'>경제</option><option value='4'>국제</option><option value='5'>문화</option><option value='6'>스포츠</option><option value='7'>과학</option></select>");
+				   		out.println("<div class='contents'><p>기사내용:</p><textarea name='detail'></textarea>");
 				   		out.println("<div><input type='submit' class='inputButton' value='기사 저장'><input type='reset' class='resetButton' value='지우기'></div></div></form>");
 		   		
 			   		} else {

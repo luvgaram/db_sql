@@ -34,6 +34,16 @@ h3 {
 	margin: 20px 0px;
 }
 
+nav {
+	
+}
+
+nav ul li{
+	width: 60px;
+	float: left;
+	list-style-type: none;
+}
+
 table {
 	clear: both;
 	background-color: #f4f4f4;
