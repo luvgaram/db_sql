@@ -25,7 +25,7 @@ pageEncoding="UTF-8" %>
 
 <body>
 <div id = "wrap">
-<h1><img src="logo.png"></h1>
+<h1><a href="articles.jsp?sid=0"><img src="logo.png"></a></h1>
 <nav>
 	<ul>
 		<li><a href="articles.jsp?sid=0">전체</a></li>
@@ -38,7 +38,7 @@ pageEncoding="UTF-8" %>
 		<li><a href="articles.jsp?sid=7">과학</a></li>
 	</ul>
 </nav>
-<p class = "inputLink"><a href="login.html">기자 로그인</a></p>
+<p class = "inputLink"><a href="input.jsp">기사 쓰기</a></p>
 <!-- request handle -->
 <%
 	request.setCharacterEncoding("UTF-8");
