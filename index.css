@@ -154,3 +154,9 @@ article {
 .detailDetail {
 	clear: both;
 }
+
+.smallButton {
+	padding-left: 12px;
+	float: left;
+	width: 180px;
+}

@@ -23,7 +23,7 @@
 
 <body>
 <div id = "wrap">
-<h1><a href="articls?sid=0"><img src="logo.png"></a></h1>
+<h1><a href="articls.jsp?sid=0"><img src="logo.png"></a></h1>
 <!-- request handle -->
 <%
 	request.setCharacterEncoding("UTF-8");

@@ -32,7 +32,6 @@
 				password = request.getParameter("password");
 				sql = "select count(*) as result from members where id ='" + id + "' and password=password('" + password + "');";
 	
-				out.println(sql);
 				try {
 			 		Class.forName("com.mysql.jdbc.Driver");
 				 	conn = DriverManager.getConnection(host, user, pw);

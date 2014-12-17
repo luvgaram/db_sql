@@ -39,6 +39,7 @@ pageEncoding="UTF-8" %>
 	</ul>
 </nav>
 <p class = "inputLink"><a href="manage.jsp">기사 관리</a></p>
+<p class = "inputLink"><a href="registrate.html">기자 등록</a></p>
 <!-- request handle -->
 <%
 	request.setCharacterEncoding("UTF-8");
