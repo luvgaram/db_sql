@@ -52,7 +52,7 @@
 						sessionId = String.valueOf(mid);
 						out.println(sessionId);
 						session.setAttribute("sessionId", sessionId);
-						response.sendRedirect("input.jsp");
+						response.sendRedirect("manage.jsp");
 		   		
 			   		} else {%>
 						<script>

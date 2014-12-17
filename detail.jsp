@@ -21,8 +21,8 @@
 
 <body>
 <div id = "wrap">
-<h1><img src="logo.png"></h1>
-<p class="back"><a href="articles.jsp?sid=0">돌아가기</a></p>
+<h1><a href="articles.jsp?sid=0"><img src="logo.png"></a></h1>
+<p class="inputLink"><a href="articles.jsp?sid=0">돌아가기</a></p>
 <%	
 	aid = Integer.parseInt(request.getParameter("aid"));
 	sql="select aid, sid, members.name, title, detail, write_date from articles INNER JOIN members ON articles.mid = members.mid where aid=" + aid;
@@ -45,8 +45,8 @@
 			detail = rs.getString("detail");
 			out.println("<article>");
 			out.println("<h3> 제목: " + title + "</h3>");
-			out.println("<p>기사번호: " + aid + ", 기자이름: " + name + ", 작성일: " + write_date + "</p>");
-			out.println("<p>" + detail + "</p></article>");
+			out.println("<p class='detailTitle'>기사번호: " + aid + ", 기자이름: " + name + ", 작성일: " + write_date + "</p></br>");
+			out.println("<p class='detailDetail'>" + detail + "</p></article>");
 		}
 		
 	} catch (Exception e) {

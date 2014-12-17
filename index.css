@@ -120,7 +120,7 @@ textarea {
 }
 
 article {
-	margin-top: 20px;
+	margin-top: 30px;
 	padding: 10px;
 	background-color: #f4f4f4;
 	border: 1px solid #4e5259;
@@ -138,10 +138,19 @@ article {
 
 .inputLink {
 	float: right;
-	margin-bottom: 10px;
+	margin: 0px 0px 10px 10px;
 }
 
-.back {
+.manageTitle {
+	width: 468px !important;
+}
+
+.detailTitle {
 	float: right;
-	padding-bottom: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.detailDetail {
+	clear: both;
 }
